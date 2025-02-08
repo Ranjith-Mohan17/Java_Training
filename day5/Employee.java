@@ -2,11 +2,16 @@ package com.celcom.day5;
 
 public class Employee {
 	String name, job;
-	Employee(String name, String job) {
+	int basic;
+	char grade;
+	int grossSalary;
+	Employee(String name, String job, int basic, char grade) {
 		this.name = name;
 		this.job = job;
+		this.basic = basic;
+		this.grade = grade;
 	}
-	static int computeSalary(int basic, char grade)
+	void computeSalary()
 	{
 		double allowance;
 		double hra, da, pf;
@@ -27,16 +32,17 @@ public class Employee {
 		}
 		double gross = Math.round(basic + hra + da + allowance - pf);
 							
-		return (int)gross;
+		grossSalary = (int) gross;
 	}
 	void display() {
 		System.out.println("The Name is " + name);
 		System.out.println("The Job is " + job);
+		System.out.println("The Salary is " + grossSalary);
 	}
 	public static void main(String[] args) {
-		Employee emp = new Employee("Sunder", "Junior Consultant");
+		Employee emp = new Employee("Sunder", "Junior Consultant", 10000, 'A');
+		emp.computeSalary();
 		emp.display();
-		System.out.println("The Salary is " + Employee.computeSalary(10000, 'A'));
 	}
 
 }
