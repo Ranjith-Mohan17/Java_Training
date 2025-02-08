@@ -22,8 +22,13 @@ public class Bank {
         collection.removeIf(acc -> acc.accNumber.equals(accNumber));
     }
     static void displayAccounts() {
+    	int flag = 0;
         for (Account acc : collection) {
+        	flag = 1;
             System.out.println("The Account Number : " + acc.accNumber + " Balance : " + acc.balance);
+        }
+        if(flag == 0) {
+        	System.out.println("No More Accounts in the Bank!!");
         }
     }
 	public static void main(String args[]) {
