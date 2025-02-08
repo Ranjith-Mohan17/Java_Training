@@ -1,6 +1,6 @@
 package com.celcom.day5;
 import java.util.ArrayList;
-
+import java.util.Scanner;
 class Book {
     String title, author, ISBN;
     static ArrayList<Book> collection = new ArrayList<>();
@@ -26,15 +26,42 @@ class Book {
     }
 
     public static void main(String[] args) {
-        Book b1 = new Book("Java Basics", "John Doe", "12345");
-        Book b2 = new Book("Data Structures", "Jane Doe", "67890");
 
-        addBook(b1);
-        addBook(b2);
-        displayBooks();
-        
-        System.out.println("After removing:");
-        removeBook("12345");
-        displayBooks();
+        Scanner sc = new Scanner(System.in);
+        int flag = 0;
+        do {
+            System.out.println("Enter 1 ------> Add Book");
+            System.out.println("Enter 2 ------> Remove Book");
+            System.out.println("Enter 3 ------> Display Books");
+            System.out.println("Enter 4 ------> Exit");
+        	int choice = sc.nextInt();
+            switch(choice) {
+            case 1:
+            	System.out.println("Enter Title, Author, ISBN");
+            	String title = sc.next();
+            	String author = sc.next();
+            	String ISBN = sc.next();
+            	addBook(new Book(title, author, ISBN));
+            	System.out.println("Book Added!!");
+            	break;
+            case 2:
+            	System.out.println("ISBN");
+            	ISBN = sc.next();
+            	removeBook(ISBN);
+            	System.out.println("Book Removed!!");
+            	break;
+            case 3:
+            	displayBooks();
+            	break;
+            case 4:
+            	System.out.println("Terminated!!");
+            	flag = 1;
+            	break;
+            default:
+            	System.out.println("Enter Valid Choice!!");
+            	break;
+            }
+        }while(flag == 0);
+        sc.close();
     }
 }
