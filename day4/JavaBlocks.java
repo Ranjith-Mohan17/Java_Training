@@ -7,9 +7,11 @@ public class JavaBlocks {
 	static {
 		System.out.println("Static Block");
 	}
+
 	public String toString() {
 		return "to String";
 	}
+
 	public static void main(String args[]) {
 		System.out.println("Main Method Block");
 		JavaBlocks obj = new JavaBlocks();

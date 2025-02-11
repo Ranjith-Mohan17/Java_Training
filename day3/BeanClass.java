@@ -4,7 +4,7 @@ public class BeanClass {
 	private int eid;
 	private String name;
 	private int esalary;
-	
+
 	public BeanClass() {
 	}
 

@@ -2,21 +2,27 @@ package com.celcom.Saturday_Assignment_8th_Feb_2025;
 
 public class Circle {
 	double radius;
+
 	Circle(double radius) {
 		this.radius = radius;
 	}
+
 	void setRadius(double radius) {
 		this.radius = radius;
 	}
+
 	double getRadius() {
 		return radius;
 	}
+
 	void calculateArea() {
 		System.out.println("The Area is " + 3.14 * radius * radius);
 	}
+
 	void calculateCircumferaence() {
 		System.out.println("The Circumference is " + 2 * 3.14 * radius);
 	}
+
 	public static void main(String args[]) {
 		Circle circle = new Circle(3.187);
 		circle.calculateArea();
@@ -25,6 +31,6 @@ public class Circle {
 		System.out.println("The New Radius is " + circle.getRadius());
 		circle.calculateArea();
 		circle.calculateCircumferaence();
-		
+
 	}
 }

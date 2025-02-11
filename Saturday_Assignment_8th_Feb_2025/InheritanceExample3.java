@@ -1,15 +1,18 @@
 package com.celcom.Saturday_Assignment_8th_Feb_2025;
+
 class Shape {
 	void calculateArea(int length, int breadth) {
-		
+
 	}
 }
-class Rectangle1 extends Shape{
+
+class Rectangle1 extends Shape {
 	void calculateArea(int length, int breadth) {
 		System.out.println("The Area of Rectangle is " + (length * breadth));
 	}
 }
-public class InheritanceExample3{
+
+public class InheritanceExample3 {
 	public static void main(String args[]) {
 		Shape rec = new Rectangle1();
 		rec.calculateArea(12, 10);
