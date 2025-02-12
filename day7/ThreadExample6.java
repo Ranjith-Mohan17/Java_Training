@@ -43,7 +43,7 @@ class Writer extends Thread {
 		synchronized(data) {
 			System.out.println("Writer is writing Data...");
 			data.setMsg("Hii EveryOne");
-			data.''
+			data.notify();
 		}
 	}
 }
@@ -53,7 +53,7 @@ public class ThreadExample6 {
 		Data data = new Data();
 		Reader reader = new Reader(data);
 		reader.start();
-		reader.sleep(1000);
+		Thread.sleep(2000);
 		Writer writer = new Writer(data);
 		writer.start();
 	}
