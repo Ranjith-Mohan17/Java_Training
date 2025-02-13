@@ -7,7 +7,7 @@ public class StringTokenizers {
 		String s = "Welcome to Java Programming";
 		StringTokenizer st = new StringTokenizer(s, " ");
 		System.out.println(st.countTokens());
-		while(st.hasMoreTokens()) {
+		while (st.hasMoreTokens()) {
 			System.out.print(st.nextToken());
 		}
 	}
