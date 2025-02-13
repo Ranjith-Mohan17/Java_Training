@@ -32,5 +32,6 @@ public class InnerClassExample {
 		inner1.myMethod1();
 		InnerClassExample.InnerClass2 inner2 = new InnerClassExample.InnerClass2();
 		inner2.myMethod2();
+		main.method();
 	}
 }

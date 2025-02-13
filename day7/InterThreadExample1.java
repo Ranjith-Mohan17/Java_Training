@@ -48,7 +48,7 @@ class Writer extends Thread {
 	}
 }
 
-public class ThreadExample6 {
+public class InterThreadExample1 {
 	public static void main(String args[]) throws InterruptedException {
 		Data data = new Data();
 		Reader reader = new Reader(data);

@@ -11,7 +11,7 @@ public class ThrowsKeywordExample {
 
 	static void m2() {
 		try {
-			m1();
+			ThrowsKeywordExample.m1();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
