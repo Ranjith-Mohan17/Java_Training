@@ -1,12 +1,28 @@
-package com.celcom.Saturday_Assignment_15th_Feb_2025;
+package com.celcom.day10;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Program5 {
+public class SortList {
+	public static void selectionSort(List<Integer> list) {
+		int n = list.size();
+		for (int i = 0; i < n - 1; i++) {
+			int minIndex = i;
+			for (int j = i + 1; j < n; j++) {
+				if (list.get(j) < list.get(minIndex)) {
+					minIndex = j;
+				}
+			}
+			if (minIndex != i) {
+				int temp = list.get(i);
+				list.set(i, list.get(minIndex));
+				list.set(minIndex, temp);
+			}
+		}
+	}
 
-	public static void main(String[] args) {
+	public static void main(String args[]) {
 		Scanner sc = new Scanner(System.in);
 		List<Integer> l = new ArrayList<>();
 		int choice, flag = 0;
@@ -28,10 +44,9 @@ public class Program5 {
 				break;
 			}
 		} while (flag == 0);
-		System.out.print("Array Elements are : ");
-		for(int i = 0; i < l.size(); i++) {
-			System.out.print(l.get(i) + " ");
-		}
+		System.out.println("The Original List : " + l);
+		SortList.selectionSort(l);
+		System.out.println("The Sorted List : " + l);
+		sc.close();
 	}
-
 }

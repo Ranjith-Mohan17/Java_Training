@@ -1,6 +1,7 @@
 package com.celcom.Saturday_Assignment_15th_Feb_2025;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -8,21 +9,27 @@ public class Program3 {
 	public static void main(String args[]) {
 		Scanner sc = new Scanner(System.in);
 		List<Integer> l = new ArrayList<>();
-		System.out.println("Enter 1 ----> Add Elements in the List : ");
-		System.out.println("Enter 2 ----> Exit");
-		int choice;
+		int choice, flag = 0;
 		do {
+			System.out.println("Enter 1 ----> Add Elements in the List : ");
+			System.out.println("Enter 2 ----> Exit");
 			System.out.println("Enter the Choice : ");
 			choice = sc.nextInt();
-			if(choice == 1) {
+			switch (choice) {
+			case 1:
 				System.out.println("Enter the Element to add :");
 				l.add(sc.nextInt());
+				break;
+			case 2:
+				flag = 1;
+				break;
+			case 3:
+				System.out.println("Enter the Valid Choice");
+				break;
 			}
-		}while(choice == 1);
-		List<Integer> l1 = new ArrayList<>();
-		for(int i : l) {
-			l1.add(i);
-		}
+		} while (flag == 0);
+		List<Integer> l1 = new ArrayList<>(Collections.nCopies(l.size(), 0));
+		Collections.copy(l1,l);
 		System.out.println("List Copied : " + l1);
 	}
 }
