@@ -5,6 +5,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class IoStreamExample2 {
+	
 	public static void main(String args[]) throws IOException {
 		FileInputStream fr = new FileInputStream("D:\\A.jpg");
 		FileOutputStream wr = new FileOutputStream("D:\\A1.jpg");
@@ -16,4 +17,5 @@ public class IoStreamExample2 {
 		fr.close();
 		wr.close();
 	}
+	
 }

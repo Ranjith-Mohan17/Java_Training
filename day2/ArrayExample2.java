@@ -3,6 +3,7 @@ package com.celcom.day2;
 import java.util.Scanner;
 
 public class ArrayExample2 {
+	
 	public static void main(String args[]) {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter the Size of an Array : ");
@@ -29,4 +30,5 @@ public class ArrayExample2 {
 		System.out.println("Even Count is : " + evenCount);
 		System.out.println("Odd Count is : " + oddCount);
 	}
+	
 }

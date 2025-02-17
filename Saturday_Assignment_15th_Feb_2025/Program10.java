@@ -32,5 +32,4 @@ public class Program10 {
 		l1.addAll(l);
 		System.out.println("Copied Linked List : " + l1);
 	}
-
 }

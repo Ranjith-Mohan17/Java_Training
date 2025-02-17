@@ -92,7 +92,6 @@ public class InheritanceExample2 {
 			default:
 				flag = false;
 				System.out.println("Terinated!!");
-
 				break;
 			}
 		} while (flag);

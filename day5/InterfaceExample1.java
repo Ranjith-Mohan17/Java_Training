@@ -17,6 +17,7 @@ interface VehiclePlan2 {
 }
 
 // It wont allows to create object for an abstract class.
+
 class Bike implements VehiclePlan1, VehiclePlan2 {
 
 	public void noOfEngine() {

@@ -31,6 +31,5 @@ public class Circle {
 		System.out.println("The New Radius is " + circle.getRadius());
 		circle.calculateArea();
 		circle.calculateCircumferaence();
-
 	}
 }

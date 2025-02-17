@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ArrayListToLinkedList {
+	
 	public static void main(String args[]) {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter the List Size : ");
@@ -21,4 +22,5 @@ public class ArrayListToLinkedList {
 		System.out.println("Linked List : " + l1);
 		sc.close();
 	}
+	
 }

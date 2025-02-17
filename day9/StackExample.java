@@ -4,6 +4,7 @@ import java.util.Enumeration;
 import java.util.Stack;
 
 public class StackExample {
+	
 	public static void main(String args[]) {
 		Stack<Integer> s = new Stack<>();
 		System.out.println(s.size());
@@ -26,4 +27,5 @@ public class StackExample {
 			System.out.println(e.nextElement());
 		}
 	}
+	
 }
