@@ -49,7 +49,7 @@ public class Bank {
     private static final ArrayList<Account> collection = new ArrayList<>(); 
 
     // Method to add a new account
-    private static void addAccount(Account acc) {
+    public void addAccount(Account acc) {
         if (getAccount(acc.getAccNumber()) == null) { 
             collection.add(acc);
             System.out.println("Account Added Successfully!");
@@ -59,7 +59,7 @@ public class Bank {
     }
 
     // Method to remove an account
-    private static void removeAccount(String accNumber) {
+    public void removeAccount(String accNumber) {
         Account acc = getAccount(accNumber);
         if (acc != null) {
             collection.remove(acc);
@@ -70,7 +70,7 @@ public class Bank {
     }
 
     // Method to display all accounts
-    private static void displayAccounts() {
+    public void displayAccounts() {
         if (collection.isEmpty()) {  
             System.out.println("No More Accounts in the Bank!");
             return;
@@ -82,7 +82,7 @@ public class Bank {
     }
 
     // Method to search for an account
-    private static Account getAccount(String accNumber) {
+    public Account getAccount(String accNumber) {
         for (Account acc : collection) {
             if (acc.getAccNumber().equals(accNumber)) {
                 return acc;
@@ -94,6 +94,7 @@ public class Bank {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         boolean exit = false; 
+        Bank bank = new Bank();
 
         while (!exit) {
             System.out.println("\n===== BANKING SYSTEM MENU =====");
@@ -116,23 +117,23 @@ public class Bank {
                     accNo = sc.next();
                     System.out.print("Enter Initial Deposit Amount: ");
                     amount = sc.nextDouble();
-                    addAccount(new Account(accNo, amount));
+                    bank.addAccount(new Account(accNo, amount));
                     break;
 
                 case 2:  // Remove existing account
                     System.out.print("Enter Account Number to Remove: ");
                     accNo = sc.next();
-                    removeAccount(accNo);
+                    bank.removeAccount(accNo);
                     break;
 
                 case 3:  // Display all accounts
-                    displayAccounts();
+                    bank.displayAccounts();
                     break;
 
                 case 4:  // Deposit money into an account
                     System.out.print("Enter Account Number: ");
                     accNo = sc.next();
-                    Account depositAcc = getAccount(accNo);
+                    Account depositAcc = bank.getAccount(accNo);
                     if (depositAcc != null) {
                         System.out.print("Enter Amount to Deposit: ");
                         amount = sc.nextDouble();
@@ -145,7 +146,7 @@ public class Bank {
                 case 5:  // Withdraw money from an account
                     System.out.print("Enter Account Number: ");
                     accNo = sc.next();
-                    Account withdrawAcc = getAccount(accNo);
+                    Account withdrawAcc = bank.getAccount(accNo);
                     if (withdrawAcc != null) {
                         System.out.print("Enter Amount to Withdraw: ");
                         amount = sc.nextDouble();
@@ -158,7 +159,7 @@ public class Bank {
                 case 6:  // Check account balance
                     System.out.print("Enter Account Number to Check Balance: ");
                     accNo = sc.next();
-                    Account balanceAcc = getAccount(accNo);
+                    Account balanceAcc = bank.getAccount(accNo);
                     if (balanceAcc != null) {
                         System.out.println("Current Balance for Account " + accNo + " is: " + balanceAcc.getBalance());
                     } else {
