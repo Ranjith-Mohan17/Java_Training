@@ -6,8 +6,7 @@ import java.util.Scanner;
 class Account {
     private String accNumber;
     private double balance;
-
-    // Constructor to initialize account details
+    
     Account(String accNumber, double balance) {
         this.accNumber = accNumber;
         this.balance = balance;
@@ -23,7 +22,7 @@ class Account {
         return balance;
     }
 
-    // Method to deposit money into the account
+    // Method to deposit money
     public void deposit(double amount) {
         if (amount > 0) {
             balance += amount;
@@ -47,11 +46,11 @@ class Account {
 }
 
 public class Bank {
-    private static final ArrayList<Account> collection = new ArrayList<>();  // List of all accounts
+    private static final ArrayList<Account> collection = new ArrayList<>(); 
 
     // Method to add a new account
     private static void addAccount(Account acc) {
-        if (getAccount(acc.getAccNumber()) == null) {  // Check if account already exists
+        if (getAccount(acc.getAccNumber()) == null) { 
             collection.add(acc);
             System.out.println("Account Added Successfully!");
         } else {
@@ -59,7 +58,7 @@ public class Bank {
         }
     }
 
-    // Method to remove an account using account number
+    // Method to remove an account
     private static void removeAccount(String accNumber) {
         Account acc = getAccount(accNumber);
         if (acc != null) {
@@ -82,7 +81,7 @@ public class Bank {
         }
     }
 
-    // Method to search for an account by account number
+    // Method to search for an account
     private static Account getAccount(String accNumber) {
         for (Account acc : collection) {
             if (acc.getAccNumber().equals(accNumber)) {
